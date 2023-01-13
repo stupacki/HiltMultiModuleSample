@@ -8,7 +8,7 @@ android {
     compileSdk globalTargetSdk
 
     defaultConfig {
-        applicationId "com.stupacki.hilt.app"
+        applicationId globalAppPackage
         minSdk globalMinSdk
         targetSdk globalTargetSdk
         versionCode 1
@@ -36,6 +36,10 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11
+        freeCompilerArgs = [
+                "-opt-in=kotlin.RequiresOptIn",
+                "-Xallow-jvm-ir-dependencies",
+        ]
     }
 
     buildFeatures {
