@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "HiltMultiModuleSample"
-include ':app'
+include ':distribution:app'
