@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace 'com.stupacki.hilt.app'
-    compileSdk 33
+    namespace globalAppPackage
+    compileSdk globalTargetSdk
 
     defaultConfig {
         applicationId "com.stupacki.hilt.app"
-        minSdk 21
-        targetSdk 33
+        minSdk globalMinSdk
+        targetSdk globalTargetSdk
         versionCode 1
         versionName "1.0"
 
@@ -28,11 +28,13 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = JavaVersion.VERSION_11
     }
     buildFeatures {
         viewBinding true
     }
+
+    dynamicFeatures = []
 }
 
 dependencies {

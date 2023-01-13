@@ -1,0 +1,6 @@
+ext {
+
+    globalMinSdk = 23
+    globalTargetSdk = 33
+    globalAppPackage = 'com.stupacki.hilt.app'
+}
