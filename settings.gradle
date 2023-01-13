@@ -1,2 +1,3 @@
 rootProject.name = "HiltMultiModuleSample"
-include ':distribution:app'
+include ':distribution:app',
+        ':feature:feature'
