@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -63,4 +64,6 @@ dependencies {
     api libraries.constraintLayout
     api libraries.navigationFragment
     api libraries.navigationUi
+    api libraries.hilt
+    kapt libraries.hilt
 }
