@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.stupacki.hilt.hilt_multi_module_sample'
+    namespace 'com.stupacki.hilt.app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.stupacki.hilt.hilt_multi_module_sample"
+        applicationId "com.stupacki.hilt.app"
         minSdk 21
         targetSdk 33
         versionCode 1

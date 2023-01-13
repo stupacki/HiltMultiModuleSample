@@ -1,4 +1,4 @@
-package com.stupacki.hilt.hilt_multi_module_sample
+package com.stupacki.hilt.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

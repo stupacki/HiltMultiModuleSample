@@ -1,4 +1,4 @@
-package com.stupacki.hilt.hilt_multi_module_sample
+package com.stupacki.hilt.app
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -10,7 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.stupacki.hilt.hilt_multi_module_sample.databinding.ActivityMainBinding
+import com.stupacki.hilt.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
