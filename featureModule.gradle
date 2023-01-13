@@ -1,0 +1,32 @@
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk globalTargetSdk
+
+    defaultConfig {
+        minSdk globalMinSdk
+        targetSdk globalTargetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11
+        freeCompilerArgs = [
+                "-opt-in=kotlin.RequiresOptIn",
+                "-Xallow-jvm-ir-dependencies",
+        ]
+    }
+}
+
+dependencies {
+
+    implementation project(':distribution:app')
+}

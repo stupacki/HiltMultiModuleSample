@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlinVersion = '1.7.20'
+        kotlinVersion = '1.7.21'
     }
 
     repositories {
@@ -15,6 +15,7 @@ buildscript {
 }
 
 apply from: "params.gradle"
+apply from: "dependencies.gradle"
 
 allprojects {
     repositories {
