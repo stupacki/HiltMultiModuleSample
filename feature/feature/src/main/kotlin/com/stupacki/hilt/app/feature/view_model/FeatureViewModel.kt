@@ -8,7 +8,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-internal class FeatureViewModel @Inject constructor() : ViewModel() {
+internal class FeatureViewModel @Inject constructor(
+//    private val incUseCase:
+) : ViewModel() {
 
     private val _featureState: MutableStateFlow<Int> by lazy { MutableStateFlow(0) }
     val featureState: StateFlow<Int>

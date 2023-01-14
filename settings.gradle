@@ -1,3 +1,10 @@
 rootProject.name = "HiltMultiModuleSample"
+
+//Distribution
 include ':distribution:app',
+
+        //Common
+        ':common:domain',
+
+        //Feature
         ':feature:feature'
