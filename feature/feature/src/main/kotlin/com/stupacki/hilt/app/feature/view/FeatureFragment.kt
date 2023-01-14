@@ -8,10 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import com.stupacki.hilt.app.feature.R
 import com.stupacki.hilt.app.feature.databinding.FragmentFeatureBinding
 import com.stupacki.hilt.app.feature.view_model.FeatureViewModel
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
 internal class FeatureFragment : Fragment(R.layout.fragment_feature) {
 
     private var _binding: FragmentFeatureBinding? = null

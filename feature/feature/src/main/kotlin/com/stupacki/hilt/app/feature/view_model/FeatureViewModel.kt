@@ -14,7 +14,7 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 internal class FeatureViewModel @Inject constructor(
-    private val inc: IncUseCase,
+//    private val inc: IncUseCase,
 ) : ViewModel(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext
@@ -26,7 +26,7 @@ internal class FeatureViewModel @Inject constructor(
 
     fun onIncClicked() {
         launch {
-            _featureState.value = inc(_featureState.value)
+//            _featureState.value = inc(_featureState.value)
         }
     }
 
