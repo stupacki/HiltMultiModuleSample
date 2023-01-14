@@ -2,15 +2,19 @@ package com.stupacki.hilt.app.feature.view_model
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
 
 @HiltViewModel
-internal class FeatureViewModel : ViewModel() {
+internal class FeatureViewModel @Inject constructor() : ViewModel() {
 
-    private var _featureState: Int = 0
-    val featureState: Int
-        get() = _featureState
+    private val _featureState: MutableStateFlow<Int> by lazy { MutableStateFlow(0) }
+    val featureState: StateFlow<Int>
+        get() = _featureState.asStateFlow()
 
     fun inc() {
-        _featureState += 1
+        _featureState.value += 1
     }
 }
