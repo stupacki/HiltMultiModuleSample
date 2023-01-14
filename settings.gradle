@@ -5,6 +5,7 @@ include ':distribution:app',
 
         //Common
         ':common:domain',
+        ':common:data',
 
         //Feature
         ':feature:feature'

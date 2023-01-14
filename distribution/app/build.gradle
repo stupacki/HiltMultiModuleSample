@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -51,6 +52,10 @@ android {
         viewBinding true
     }
 
+    kapt {
+        correctErrorTypes true
+    }
+
     dynamicFeatures = [
             ':feature:feature'
     ]
@@ -64,6 +69,10 @@ dependencies {
     api libraries.constraintLayout
     api libraries.navigationFragment
     api libraries.navigationUi
-    api libraries.hilt
-    kapt libraries.hilt
+    api libraries.coroutinesCore
+    api libraries.coroutinesAndroid
+
+    implementation libraries.hilt
+
+    kapt libraries.hiltCompiler
 }

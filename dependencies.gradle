@@ -1,6 +1,6 @@
 ext {
     versions = [
-
+            coroutines: '1.6.4',
     ]
     libraries = [
             androidCore       : 'androidx.core:core-ktx:1.9.0',
@@ -9,6 +9,9 @@ ext {
             constraintLayout  : 'androidx.constraintlayout:constraintlayout:2.1.4',
             navigationFragment: 'androidx.navigation:navigation-fragment-ktx:2.5.3',
             navigationUi      : 'androidx.navigation:navigation-ui-ktx:2.5.3',
-            hilt              : 'com.google.dagger:hilt-android:2.44'
+            hilt              : "com.google.dagger:hilt-android:$hiltVersion",
+            hiltCompiler      : "com.google.dagger:hilt-android-compiler:$hiltVersion",
+            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines",
+            coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines",
     ]
 }

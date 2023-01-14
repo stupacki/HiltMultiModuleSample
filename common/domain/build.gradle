@@ -1,5 +1,9 @@
 apply from: "$rootProject.rootDir.absolutePath/androidLibModule.gradle"
 
 android {
-    namespace 'com.stupacki.hilt.domain'
+    namespace 'com.stupacki.hilt.app.domain'
+}
+
+dependencies {
+    implementation project(':common:data')
 }

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion globalTargetSdk
@@ -25,6 +26,10 @@ android {
         freeCompilerArgs = ['-opt-in=kotlin.RequiresOptIn']
     }
 
+    kapt {
+        correctErrorTypes true
+    }
+
     testOptions {
         unitTests.all {
             useJUnitPlatform()
@@ -35,6 +40,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api libraries.hilt
-    kapt libraries.hilt
+    implementation libraries.hilt
+    implementation libraries.coroutinesCore
+    implementation libraries.coroutinesAndroid
+
+    kapt libraries.hiltCompiler
 }
