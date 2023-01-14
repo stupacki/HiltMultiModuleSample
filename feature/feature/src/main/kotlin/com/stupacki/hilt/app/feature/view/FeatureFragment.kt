@@ -23,6 +23,8 @@ internal class FeatureFragment : Fragment(R.layout.fragment_feature) {
 
             incButton.setOnClickListener { featureViewModel.inc() }
 
+            decButton.setOnClickListener { featureViewModel.dec() }
+
             viewLifecycleOwner.lifecycleScope.launch {
                 featureViewModel.featureState.collect { count ->
                     counterView.text = count.toString()

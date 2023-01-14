@@ -17,4 +17,8 @@ internal class FeatureViewModel @Inject constructor() : ViewModel() {
     fun inc() {
         _featureState.value += 1
     }
+
+    fun dec() {
+        _featureState.value -= 1
+    }
 }
