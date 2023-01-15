@@ -44,8 +44,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':distribution:app')
-    implementation project('::common:domain')
-    implementation project('::common:data')
 
     implementation libraries.hilt
 

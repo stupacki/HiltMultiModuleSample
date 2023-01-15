@@ -1,7 +1,8 @@
-package com.stupacki.hilt.app.feature.view_model
+package com.stupacki.hilt.app.feature.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.stupacki.hilt.app.domain.calcualtion.usecase.DecUseCase
 import com.stupacki.hilt.app.domain.calcualtion.usecase.IncUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -14,7 +15,8 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 internal class FeatureViewModel @Inject constructor(
-//    private val inc: IncUseCase,
+    private val inc: IncUseCase,
+    private val dec: DecUseCase,
 ) : ViewModel(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext
@@ -26,11 +28,13 @@ internal class FeatureViewModel @Inject constructor(
 
     fun onIncClicked() {
         launch {
-//            _featureState.value = inc(_featureState.value)
+            _featureState.value = inc(_featureState.value)
         }
     }
 
     fun dec() {
-        _featureState.value -= 1
+        launch {
+            _featureState.value = dec(_featureState.value)
+        }
     }
 }
