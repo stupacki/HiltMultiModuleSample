@@ -1,7 +1,6 @@
 apply plugin: 'com.android.dynamic-feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdk globalTargetSdk
@@ -44,8 +43,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':distribution:app')
-
-    implementation libraries.hilt
-
-    kapt libraries.hiltCompiler
 }

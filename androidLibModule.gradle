@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion globalTargetSdk
@@ -40,9 +39,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation libraries.hilt
     implementation libraries.coroutinesCore
     implementation libraries.coroutinesAndroid
-
-    kapt libraries.hiltCompiler
 }
