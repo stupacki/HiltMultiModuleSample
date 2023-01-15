@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -73,4 +74,7 @@ dependencies {
     api libraries.navigationUi
     api libraries.coroutinesCore
     api libraries.coroutinesAndroid
+    implementation libraries.hilt
+
+    kapt libraries.hiltCompiler
 }
