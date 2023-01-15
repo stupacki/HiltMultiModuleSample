@@ -4,17 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.stupacki.hilt.app.domain.calcualtion.usecase.DecUseCase
 import com.stupacki.hilt.app.domain.calcualtion.usecase.IncUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-@HiltViewModel
-internal class FeatureViewModel @Inject constructor(
+internal class FeatureViewModel(
     private val inc: IncUseCase,
     private val dec: DecUseCase,
 ) : ViewModel(), CoroutineScope {

@@ -63,8 +63,8 @@ android {
 
 dependencies {
 
-    api project(':common:data')
-    api project(':common:domain')
+    implementation project(':common:data')
+    implementation project(':common:domain')
 
     api libraries.androidCore
     api libraries.appCompat
