@@ -62,18 +62,12 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':common:data')
-    implementation project(':common:domain')
+    api project(':common:core')
+    api project(':common:data')
+    api project(':common:domain')
 
-    api libraries.androidCore
-    api libraries.appCompat
-    api libraries.material
-    api libraries.constraintLayout
-    api libraries.navigationFragment
-    api libraries.navigationUi
-    api libraries.coroutinesCore
-    api libraries.coroutinesAndroid
     implementation libraries.hilt
 
     kapt libraries.hiltCompiler

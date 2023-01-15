@@ -1,26 +1,40 @@
 package com.stupacki.hilt.app.feature.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.stupacki.hilt.app.App
-import com.stupacki.hilt.app.domain.calcualtion.usecase.DecUseCase
-import com.stupacki.hilt.app.domain.calcualtion.usecase.IncUseCase
+import com.stupacki.hilt.app.domain.calcualtion.injection.CalculationDependencies
 import com.stupacki.hilt.app.feature.R
 import com.stupacki.hilt.app.feature.databinding.FragmentFeatureBinding
+import com.stupacki.hilt.app.feature.injection.DaggerFeatureComponent
 import com.stupacki.hilt.app.feature.viewmodel.FeatureViewModel
-import kotlinx.coroutines.Dispatchers
+import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.launch
+
 
 internal class FeatureFragment : Fragment(R.layout.fragment_feature) {
 
     private var _binding: FragmentFeatureBinding? = null
 
-    private val inc: IncUseCase by lazy { IncUseCase(Dispatchers.IO) }
-    private val dec: DecUseCase by lazy { DecUseCase(Dispatchers.IO) }
-    private val featureViewModel: FeatureViewModel by lazy {
-        FeatureViewModel(inc, dec)
+    private val featureViewModel: FeatureViewModel by viewModels()
+
+    override fun onAttach(context: Context) {
+        DaggerFeatureComponent.builder()
+            .context(requireContext())
+            .appDependencies(
+                EntryPointAccessors.fromApplication(
+                    requireContext().applicationContext,
+                    CalculationDependencies::class.java
+                )
+            )
+            .build()
+            .inject(this)
+
+        super.onAttach(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

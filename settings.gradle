@@ -4,6 +4,7 @@ rootProject.name = "HiltMultiModuleSample"
 include ':distribution:app',
 
         //Common
+        ':common:core',
         ':common:domain',
         ':common:data',
 

@@ -1,15 +1,13 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
 
 android {
-    compileSdkVersion globalTargetSdk
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-    }
+    namespace 'com.stupacki.hilt.app.core'
+    compileSdk globalTargetSdk
 
     defaultConfig {
         minSdkVersion globalMinSdk
@@ -40,6 +38,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    api libraries.androidCore
+    api libraries.appCompat
+    api libraries.material
+    api libraries.constraintLayout
+    api libraries.navigationFragment
+    api libraries.navigationUi
+    api libraries.coroutinesCore
+    api libraries.coroutinesAndroid
+    api libraries.coroutinesCore
+    api libraries.coroutinesAndroid
     implementation libraries.hilt
 
     kapt libraries.hiltCompiler
